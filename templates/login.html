@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#login" data-bs-toggle="tab">Вход</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#register" data-bs-toggle="tab">Регистрация</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="login">
+                        <form method="POST" action="/login">
+                            <div class="mb-3">
+                                <label>Email:</label>
+                                <input type="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label>Пароль:</label>
+                                <input type="password" name="password" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Войти</button>
+                        </form>
+                    </div>
+                    <div class="tab-pane" id="register">
+                        <form method="POST" action="/register">
+                            <div class="mb-3">
+                                <label>Имя:</label>
+                                <input type="text" name="name" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label>Email:</label>
+                                <input type="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label>Пароль:</label>
+                                <input type="password" name="password" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn-success">Зарегистрироваться</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
